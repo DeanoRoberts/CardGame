@@ -55,7 +55,7 @@ public class Deck
     {
         for (int i = 0; i < cards.size(); i++)
         {
-            double r = (Math.random() );
+            double rand = (Math.random() );
 
         }
     }
