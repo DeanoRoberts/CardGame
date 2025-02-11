@@ -2,18 +2,17 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Game {
-    // creates array list so we can create all our cards
-    private String[] ranks = {"King", "Queen", "Ace", "Jack", "10", "9", "8", "7", "6", "5", "4", "3", "2"};
-    private String[] suits = {"Clubs", "Diamonds", "Hearts", "Spades"};
-    private int[] values = {10, 10, 1, 10, 10, 9, 8, 7, 6, 5, 4, 3, 2};
-    // creates the deck for our game
-    Deck game = new Deck(ranks, suits, values);
+
+    private GameViewer window;
+    Deck deck;
+
 
     // constructor for our Game class
     public Game(String[] ranks, String[] suits, int[] values) {
-        this.ranks = ranks;
-        this.suits = suits;
-        this.values = values;
+        window = new GameViewer(this);
+
+        // creates the deck for our game
+        deck = new Deck(ranks, suits, values, window);
 
     }
     // prints the instructions
@@ -25,8 +24,9 @@ public class Game {
 
     // our main method to run our game
     public void playGame() {
+        window.repaint();
         // shuffles deck
-        game.shuffle();
+        deck.shuffle();
         // creates our two players
         Player p1 = new Player("player 1", new ArrayList<>());
         Player p2 = new Player("Player 2", new ArrayList<>());
@@ -46,7 +46,7 @@ public class Game {
 
         while (playing) {
             // deals a card to the player form the created deck
-            Card card = game.deal();
+            Card card = deck.deal();
             // adds it to there hand
             player.addCard(card);
             // add the points of the score
@@ -113,6 +113,9 @@ public class Game {
 
     }
 
+    public Deck getDeck() {
+        return deck;
+    }
 }
 
 

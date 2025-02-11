@@ -1,3 +1,5 @@
+import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 
 public class Deck {
@@ -6,12 +8,15 @@ public class Deck {
     private int cardsLeft;
 
     // Constructor for deck
-    public Deck(String[] rank, String[] suit, int[] value) {
+    public Deck(String[] rank, String[] suit, int[] value, GameViewer window) {
         cards = new ArrayList<Card>();
         // fills deck with rank and suit and value
+        int counter = 1;
         for (int i = 0; i < rank.length; i++) {
             for (String s : suit) {
-                cards.add(new Card(rank[i], s, value[i]));
+                String f = "Resources/Cards/" + counter + ".png";
+                counter++;
+                cards.add(new Card(rank[i], s, value[i], new ImageIcon(f).getImage(), window));
             }
 
         }
