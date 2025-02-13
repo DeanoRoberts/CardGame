@@ -1,4 +1,3 @@
-import javax.swing.*;
 import java.awt.*;
 
 public class Card {
@@ -7,6 +6,8 @@ public class Card {
     private int points;
     private Image image;
     private GameViewer window;
+
+
 
     private final int CARD_IMAGE_WIDTH = 965;
     private final int CARD_IMAGE_HEIGHT = 1358;
@@ -25,11 +26,11 @@ public class Card {
     public void draw(Graphics g)
     {
 
+            g.drawImage(image, 		// image to draw
+                    50, 50, 	// (x, y) of upper left corner in output window
+                    CARD_IMAGE_WIDTH / 2, CARD_IMAGE_HEIGHT / 2,	// width, height
+                    window);
 
-        g.drawImage(image, 		// image to draw
-                50, 50, 	// (x, y) of upper left corner in output window
-                CARD_IMAGE_WIDTH / 2, CARD_IMAGE_HEIGHT / 2,	// width, height
-                window);
 
     }
 

@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class Game {
 
     private GameViewer window;
+    private int state;
     Deck deck;
 
 
@@ -15,15 +16,37 @@ public class Game {
         deck = new Deck(ranks, suits, values, window);
 
     }
+
+    public int getState() {
+        return state;
+    }
+
     // prints the instructions
     public void printInstructions() {
+        state = 0;
         System.out.println("Today you will be playing 21!");
-        System.out.println("Player 1 will go first");
+        System.out.println("type 1 to continue");
+        Scanner scanner = new Scanner(System.in);
+        boolean notValidInput = true;
+
+       while(notValidInput)
+       {
+           String answer = scanner.nextLine();
+
+           if (answer.equals("1"))
+           {
+               break;
+           }else
+           {
+               System.out.println("type 1 to continue");
+           }
+       }
 
     }
 
     // our main method to run our game
     public void playGame() {
+        state = 1;
         window.repaint();
         // shuffles deck
         deck.shuffle();

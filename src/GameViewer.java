@@ -21,7 +21,16 @@ public class GameViewer extends JFrame
 
     public void paint(Graphics g)
     {
-        game.getDeck().deal().draw(g);
+        if (game.getState() == 0)
+        {
+            String instructions = "  Today you will be playing 21!\n" + "type 1 to continue";
+            g.drawString(instructions, 100, 100);
+        }
+
+        if (game.getState() == 1)
+        {
+            game.getDeck().deal().draw(g);
+        }
 
     }
 }
