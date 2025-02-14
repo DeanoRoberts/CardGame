@@ -5,15 +5,31 @@ public class Game {
 
     private GameViewer window;
     private int state;
-    Deck deck;
+    private Deck deck;
 
+    private Player p1;
+    private Player p2;
+
+
+    public Player getP1() {
+        return p1;
+    }
+
+    public Player getP2() {
+        return p2;
+    }
 
     // constructor for our Game class
     public Game(String[] ranks, String[] suits, int[] values) {
+        state = 0;
         window = new GameViewer(this);
 
         // creates the deck for our game
         deck = new Deck(ranks, suits, values, window);
+
+       p1 = new Player("player 1", new ArrayList<>());
+       p2 = new Player("Player 2", new ArrayList<>());
+       window.repaint();
 
     }
 
@@ -23,7 +39,7 @@ public class Game {
 
     // prints the instructions
     public void printInstructions() {
-        state = 0;
+
         System.out.println("Today you will be playing 21!");
         System.out.println("type 1 to continue");
         Scanner scanner = new Scanner(System.in);
@@ -35,6 +51,7 @@ public class Game {
 
            if (answer.equals("1"))
            {
+               state = 1;
                break;
            }else
            {
@@ -47,12 +64,8 @@ public class Game {
     // our main method to run our game
     public void playGame() {
         state = 1;
-        window.repaint();
         // shuffles deck
         deck.shuffle();
-        // creates our two players
-        Player p1 = new Player("player 1", new ArrayList<>());
-        Player p2 = new Player("Player 2", new ArrayList<>());
         // plays each players turn and gets there score
         int p1Score = turn(p1);
         int p2Score = turn(p2);
@@ -74,6 +87,7 @@ public class Game {
             player.addCard(card);
             // add the points of the score
             score += card.getPoints();
+            window.repaint();
             // tells then what they drew and how much it is worth
             System.out.println(player.getName() + " drew a " + card.getRank() + " of " + card.getSuit());
             System.out.println("Your score is a " + score);
@@ -123,9 +137,9 @@ public class Game {
 
     public static void main(String[] args) {
         // creates array list so we can create all our cards
-        String[] ranks = {"King", "Queen", "Ace", "Jack", "10", "9", "8", "7", "6", "5", "4", "3", "2"};
-        String[] suits = {"Clubs", "Diamonds", "Hearts", "Spades"};
-        int[] values = {10, 10, 1, 10, 10, 9, 8, 7, 6, 5, 4, 3, 2};
+        String[] ranks = {"Ace", "2", "3", "4", "5","6","7","8", "9", "10","Jack", "Queen", "King"};
+        String[] suits = {"Spades","Hearts","Diamonds", "Clubs"};
+        int[] values = {1,2,3,4,5,6,7,8,9,10,11,12,13};
 
         // creates a new game
         Game game = new Game(ranks, suits, values);

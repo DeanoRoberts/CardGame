@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6926341-7ea5-42d6-97a2-5cdda4b0aae9" name="Changes" comment="Got the window and a card image to pop up!">
+    <list default="true" id="f6926341-7ea5-42d6-97a2-5cdda4b0aae9" name="Changes" comment="Was able to get my states working and was able to print instructions.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Card.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameViewer.java" afterDir="false" />
     </list>
@@ -143,7 +142,23 @@
       <option name="project" value="LOCAL" />
       <updated>1739303640211</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Got the window and a card image to pop up!">
+      <option name="closed" value="true" />
+      <created>1739469309819</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1739469309819</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Was able to get my states working and was able to print instructions.">
+      <option name="closed" value="true" />
+      <created>1739469333523</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1739469333523</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -163,6 +178,18 @@
     <MESSAGE value="Finished the Game!!!" />
     <MESSAGE value="Worked on GameViewer, I added the card images into an array of CardImages." />
     <MESSAGE value="Got the window and a card image to pop up!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Got the window and a card image to pop up!" />
+    <MESSAGE value="Was able to get my states working and was able to print instructions." />
+    <option name="LAST_COMMIT_MESSAGE" value="Was able to get my states working and was able to print instructions." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GameViewer.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -23,7 +23,7 @@ public class Card {
 
     }
 
-    public void draw(Graphics g)
+    public void draw(Graphics g, int x, int y)
     {
 
             g.drawImage(image, 		// image to draw
