@@ -1,13 +1,16 @@
+// Card game by Deano Roberts
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
 public class Deck {
-    // array list to hold deck of cards
+    // Array list to hold deck of cards
     private ArrayList<Card> cards;
+    // Keeps track of how many cards are left in the deck
     private int cardsLeft;
 
-    // Constructor for deck
+    // Constructor for Deck class
     public Deck(String[] rank, String[] suit, int[] value, GameViewer window) {
         cards = new ArrayList<Card>();
         // fills deck with rank and suit and value
@@ -16,30 +19,26 @@ public class Deck {
             for (String s : suit) {
                 String f = "Resources/Cards/" + counter + ".png";
                 counter++;
+                // Adds the card to the deck
                 cards.add(new Card(rank[i], s, value[i], new ImageIcon(f).getImage(), window));
             }
 
         }
-        // makes the number of cards left equal to total size
+        // Makes the number of cards left equal to total size
         cardsLeft = cards.size();
     }
 
-    // sees if deck is empty
+    // Sees if deck is empty
     public boolean isEmpty() {
-        if (cardsLeft == 0) {
-            return true;
-        } else {
-            return false;
-
-        }
+        return cardsLeft == 0;
     }
 
-    // gets num cards left
+    // Gets num cards left
     public int getCardsLeft() {
         return cardsLeft;
     }
 
-    // deals a card
+    // Deals a card
     public Card deal() {
         if (cardsLeft == 0) {
             return null;
@@ -49,7 +48,7 @@ public class Deck {
         }
     }
 
-    // shuffles the deck
+    // Shuffles the deck
     public void shuffle() {
         Card b;
         for (int i = cards.size() - 1; i > 0; i--) {

@@ -1,3 +1,5 @@
+// Card game by Deano Roberts
+
 import java.awt.*;
 
 public class Card {
@@ -8,12 +10,11 @@ public class Card {
     private GameViewer window;
 
 
-
     private final int CARD_IMAGE_WIDTH = 965;
     private final int CARD_IMAGE_HEIGHT = 1358;
 
 
-    // constructor for card
+    // Constructor for the Card Class
     public Card(String rank, String suit, int points, Image image, GameViewer window) {
         this.rank = rank;
         this.suit = suit;
@@ -23,47 +24,48 @@ public class Card {
 
     }
 
-    public void draw(Graphics g, int x, int y)
-    {
+    // Draws the card on the screen at the specified (x, y) position
+    public void draw(Graphics g, int x, int y) {
 
-            g.drawImage(image, 		// image to draw
-                    50, 50, 	// (x, y) of upper left corner in output window
-                    CARD_IMAGE_WIDTH / 2, CARD_IMAGE_HEIGHT / 2,	// width, height
-                    window);
+        g.drawImage(image,        // Image to draw
+                x, y,    // (x, y) of upper left corner in output window
+                CARD_IMAGE_WIDTH / 4, CARD_IMAGE_HEIGHT / 4,    // Scaled width, height
+                window);
 
 
     }
 
-    // getter for card rank
+    // Getter for card rank
     public String getRank() {
         return rank;
     }
 
-    // getter for card suit
+    // Getter for card suit
     public String getSuit() {
         return suit;
     }
 
-    // getter for card points
+    // Getter for card points
     public int getPoints() {
         return points;
     }
 
-    // setter for card rank
+    // Setter for card rank
     public void setRank(String rank) {
         this.rank = rank;
     }
 
-    // setter for card suit
+    // Setter for card suit
     public void setSuit(String suit) {
         this.suit = suit;
     }
 
-    // setter for card points
+    // Setter for card points
     public void setPoints(int points) {
         this.points = points;
     }
 
+    // Overrides the toString method
     @Override
     public String toString() {
         return rank + " of " + suit;
